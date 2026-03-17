@@ -1,0 +1,6 @@
+import json
+pokedex = open("./pokedex.json", encoding="utf8")
+data = json.load(pokedex)
+ask = input("would you like to see pokemons?")
+if ask == "yes":
+    print(pokedex['name'])
