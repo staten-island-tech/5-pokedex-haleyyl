@@ -8,27 +8,32 @@ lang  = input("what language?")
 print(data[ask-1]["name"][lang]) '''
 
 ''' pokemon = input("what type of pokemon do you want?")
+type = False
 for mon in data:
     if pokemon in mon["type"]:
         print(mon["name"])
-else:
+        type = True
+if type == False:
     print("No such pokemon") '''
 
 ''' search = input("What pokemon are you looking for?")
+type = False
 for mon in data:
     if search in mon["name"]["english"]:
         print(mon["name"]["english"])
-else:
-    print("No pokemon was found") '''
-
+        type = True
+if type == False:
+    print("No pokemon was found")
+ '''
 import json
 pokedex = open("./moves.json", encoding="utf8")
 data = json.load(pokedex)
 
-pokemon = input("What type of moves do you want to see")
+pokemon = input("What type of moves do you want to see?")
+type = False
 for mon in data:
     if pokemon in mon["type"]:
         print(mon["ename"])
-
-if pokemon not in mon["type"]:
-    print("no type")
+        type = True
+if type == False:
+    print ("There is no type.")
